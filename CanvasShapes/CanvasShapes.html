@@ -29,11 +29,30 @@
             context.stroke();
 
             // Text
-            context.strokeText("Africa",320,60);
-            context.fillText("twin",320,80);
+            // context.strokeText("Africa",320,60);
+            // context.fillText("twin",320,80);
+            //
+            // context.font = '16pt Arial';
+            // context.fillText("Adventure bike",320,100);
 
-            context.font = '16pt Arial';
-            context.fillText("Adventure bike",320,100);
+            // Relative drawings
+            context.beginPath();
+            context.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+            context.moveTo(110, 75);
+            context.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+            context.moveTo(65, 65);
+            context.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+            context.moveTo(95, 65);
+            context.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+            context.stroke();
+
+            // Bezier lines
+            context.beginPath();
+            context.moveTo(375, 340);
+            context.bezierCurveTo(375, 337, 370, 325, 350, 325);
+            context.bezierCurveTo(320, 325, 320, 362.5, 320, 362.5);
+            context.bezierCurveTo(320, 525, 520, 562.5, 520, 562.5);
+            context.stroke();
 
             var image = getElementById("bike");
 
