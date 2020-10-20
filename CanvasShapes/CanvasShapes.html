@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html" charset="utf-8">
+    <script type="text/javascript" charset="utf-8">
+        function pageLoaded() {
+
+            // get a handle to the canvas context
+            var canvas = document.getElementById("the_canvas");
+
+            // get 2D context for this canvas
+            var context = canvas.getContext("2d");
+
+            // draw rectangle
+            //context.fillRect(50, 50, 100, 100);
+
+            // Complex Paths
+            // Filled Triangle
+            context.beginPath();
+            context.moveTo(10, 120);
+            context.lineTo(10, 180);
+            context.lineTo(110, 150);
+            context.fill();
+
+            // Filled Arc
+            context.beginPath();
+            context.arc(300,200,40,0,Math.PI,true);
+            context.stroke();
+
+            // Text
+            context.strokeText("Africa",320,60);
+            context.fillText("twin",320,80);
+
+            context.font = '16pt Arial';
+            context.fillText("Adventure bike",320,100);
+
+            var image = getElementById("bike");
+
+            context.drawImage(image,0,100, 100, 100);
+
+        }
+    </script>
+</head>
+
+<body onload="pageLoaded()">
+
+    <h1>Sample HTML5 File</h1>
+
+    <canvas id="the_canvas" width="800" height="600" style="border: black 1px solid;">
+        Oops! looks like your browser does not support canvas tag
+    </canvas>
+
+    <img src="https://megabikes.ie/media/catalog/product/cache/3/image/650x/040ec09b1e35df139433887a97daa66f/c/r/crf1100a2_4_1.png" id="bike">
+
+</body>
+
+</html>
